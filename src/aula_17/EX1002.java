@@ -7,27 +7,36 @@ package aula_17;
 public class EX1002 {
 
 	public static void main(String[] args) {
-		boolean condicao = false;
-		int numero_aleatorio = 1;
+	
+		int contador = 1;
+		int limite = 100;
 		
 		
-		while (condicao == false) {
+		for (int numero = 1; contador <= limite; numero++) {
+		
+			long soma_dos_divisores = calcula_soma_divisores(numero);
+			long soma_dos_div_dos_div = calcula_soma_div_div(soma_dos_divisores);
 			
-			int soma_dos_divisores = calcula_soma_divisores(numero_aleatorio);
-			int soma_dos_div_dos_div = calcula_soma_div_div(soma_dos_divisores);
 			
-			
-			if (soma_dos_div_dos_div == numero_aleatorio) {
-				System.out.println("paro aqui");
+			if (soma_dos_div_dos_div == numero) {
+				System.out.println("posicao: " + contador);
+				System.out.println("A soma dos divisores do numero: " + numero + " é: " + soma_dos_divisores);
+				System.out.println("A soma dos divisores de: " + soma_dos_divisores + " é: " +soma_dos_div_dos_div);
+				
+				
+				if (contador == limite) {
+					System.out.println("fim da execucao");
+				}
+				
+				contador +=1;	
 			}
 			
-			condicao = true;
-			numero_aleatorio += 1;
+
 		}
 
 	}
 
-	private static int calcula_soma_div_div(int soma_dos_divisores) {
+	private static int calcula_soma_div_div(long soma_dos_divisores) {
 		int soma = 0;
 		
 		for (int i = 1; i < soma_dos_divisores; i++) {
@@ -40,11 +49,11 @@ public class EX1002 {
 		return soma;
 	}
 
-	private static int calcula_soma_divisores(int numero_aleatorio) {
+	private static int calcula_soma_divisores(long numero) {
 		int soma = 0;
-		for (int i = 1; i < numero_aleatorio; i++) {
+		for (int i = 1; i < numero; i++) {
 			
-			if (numero_aleatorio % i == 0) {
+			if (numero % i == 0) {
 				soma += i;
 			}
 		}
