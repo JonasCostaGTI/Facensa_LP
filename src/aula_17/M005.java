@@ -5,11 +5,12 @@ import javax.swing.JOptionPane;
 /**
  * @author jonascosta 02/07/2015
  * 
- *         Dado uma matriz de ordem 4x4 faça um algoritmo que: a) Calcule a soma
- *         dos elementos da primeira coluna ; b) Calcule o produto dos elementos
- *         da primeira linha; c) Calcule a soma de todos os elementos da matriz;
- *         d) Calcule a soma do diagonal principal; e) Calcule a soma da
- *         diagonal secundária
+ *         Dado uma matriz de ordem 4x4 faça um algoritmo que: 
+ *         a) Calcule a soma dos elementos da primeira coluna ; 
+ *         b) Calcule o produto dos elementos da primeira linha; 
+ *         c) Calcule a soma de todos os elementos da matriz;
+ *         d) Calcule a soma do diagonal principal; 
+ *         e) Calcule a soma da diagonal secundária
  */
 public class M005 {
 
@@ -43,7 +44,7 @@ public class M005 {
 		for (int linha = 0; linha < matriz_preenchida.length; linha++) {
 			for (int coluna = 0; coluna < matriz_preenchida.length; coluna++) {
 
-				if (linha >= coluna) {
+				if ((linha + coluna) + 1 == matriz_preenchida.length) {
 					soma += matriz_preenchida[linha][coluna];
 				}
 
@@ -58,7 +59,7 @@ public class M005 {
 		for (int linha = 0; linha < matriz_preenchida.length; linha++) {
 			for (int coluna = 0; coluna < matriz_preenchida.length; coluna++) {
 
-				if (linha <= coluna) {
+				if (linha == coluna) {
 					soma += matriz_preenchida[linha][coluna];
 				}
 
